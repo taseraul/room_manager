@@ -1,0 +1,378 @@
+
+Allocating common symbols
+Common symbol       size              file
+
+ETS_loadControl0    0x10              C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+TM_tmData           0x18              C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+DM_ram              0x1c              C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+ETS_loadControl     0x10              C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+FLASH            0x00008000         0x00100000         xr
+RAM              0x00000000         0x00020000         xrw
+MEMORY_B1        0x60000000         0x00000000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+LOAD C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+LOAD C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+LOAD C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x00000000                _Min_Heap_Size = 0x0
+                0x00000080                _Min_Stack_Size = 0x80
+                0x00020000                _estack = (ORIGIN (RAM) + 0x20000)
+
+.isr_vector     0x00008000        0x0
+                0x00008000                . = ALIGN (0x4)
+ *(.isr_vector)
+                0x00008000                . = ALIGN (0x4)
+
+.text           0x00008000      0x1f8
+                0x00008000                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00008000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .text          0x00008000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .text          0x00008000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .text          0x00008000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+ *(.text*)
+ .text.main     0x00008000        0xc C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+                0x00008000                main
+ *(.rodata)
+ *(.rodata*)
+ .rodata.DM_eeprom
+                0x0000800c       0xd0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x0000800c                DM_eeprom
+ .rodata.DM_easyChannelInfo
+                0x000080dc        0x8 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x000080dc                DM_easyChannelInfo
+ .rodata.COT_ramFlagPtr
+                0x000080e4        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x000080e4                COT_ramFlagPtr
+ .rodata.COT_data
+                0x000080e8       0x24 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x000080e8                COT_data
+ .rodata.MAP_PAR_UI_16_0_delayTime1
+                0x0000810c        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x0000810c                MAP_PAR_UI_16_0_delayTime1
+ *fill*         0x0000810e        0x2 00
+ .rodata.Prop_KAIdemo
+                0x00008110       0x18 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x00008110                Prop_KAIdemo
+ .rodata.MN_userObjects
+                0x00008128        0x8 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                0x00008128                MN_userObjects
+ .rodata.ETS_maskVersion
+                0x00008130        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008130                ETS_maskVersion
+ .rodata.ETS_ManufacturerID
+                0x00008132        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008132                ETS_ManufacturerID
+ .rodata.ETS_ApplicationID
+                0x00008134        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008134                ETS_ApplicationID
+ .rodata.ETS_ApplicationVersion
+                0x00008136        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008136                ETS_ApplicationVersion
+ .rodata.ETS_AddrMaxEntries
+                0x00008138        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008138                ETS_AddrMaxEntries
+ .rodata.ETS_AssocMaxEntries
+                0x0000813a        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000813a                ETS_AssocMaxEntries
+ .rodata.LETS_eepromLength
+                0x0000813c        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000813c                LETS_eepromLength
+ .rodata.LETS_logicalEepromStart
+                0x00008140        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008140                LETS_logicalEepromStart
+ .rodata.LETS_physicalAddress
+                0x00008144        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008144                LETS_physicalAddress
+ .rodata.LETS_addressTab
+                0x00008148        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008148                LETS_addressTab
+ .rodata.LETS_assocTab
+                0x0000814c        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000814c                LETS_assocTab
+ .rodata.LETS_objectTab
+                0x00008150        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008150                LETS_objectTab
+ .rodata.LETS_parameter
+                0x00008154        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008154                LETS_parameter
+ .rodata.ETS_loadControl0Length
+                0x00008158        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008158                ETS_loadControl0Length
+ .rodata.ETS_loadControlLength
+                0x0000815c        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000815c                ETS_loadControlLength
+ .rodata.ETS_loadControlAddress
+                0x00008160        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008160                ETS_loadControlAddress
+ .rodata.ETS_CO_DPT_1__CO_in0
+                0x00008164        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008164                ETS_CO_DPT_1__CO_in0
+ .rodata.ETS_COF_CO_in0
+                0x00008166        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008166                ETS_COF_CO_in0
+ .rodata.ETS_CO_DPT_1__CO_in1
+                0x00008168        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008168                ETS_CO_DPT_1__CO_in1
+ .rodata.ETS_COF_CO_in1
+                0x0000816a        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000816a                ETS_COF_CO_in1
+ .rodata.ETS_CO_DPT_1__CO_in2
+                0x0000816c        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000816c                ETS_CO_DPT_1__CO_in2
+ .rodata.ETS_COF_CO_in2
+                0x0000816e        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000816e                ETS_COF_CO_in2
+ .rodata.ETS_CO_DPT_1__CO_in3
+                0x00008170        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008170                ETS_CO_DPT_1__CO_in3
+ .rodata.ETS_COF_CO_in3
+                0x00008172        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008172                ETS_COF_CO_in3
+ .rodata.ETS_CO_DPST_1_1__CO_out0
+                0x00008174        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008174                ETS_CO_DPST_1_1__CO_out0
+ .rodata.ETS_COF_CO_out0
+                0x00008176        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008176                ETS_COF_CO_out0
+ .rodata.ETS_CO_DPST_1_1__CO_out1
+                0x00008178        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008178                ETS_CO_DPST_1_1__CO_out1
+ .rodata.ETS_COF_CO_out1
+                0x0000817a        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000817a                ETS_COF_CO_out1
+ .rodata.ETS_CO_DPST_1_1__CO_out2
+                0x0000817c        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000817c                ETS_CO_DPST_1_1__CO_out2
+ .rodata.ETS_COF_CO_out2
+                0x0000817e        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x0000817e                ETS_COF_CO_out2
+ .rodata.ETS_CO_DPST_1_1__CO_out3
+                0x00008180        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008180                ETS_CO_DPST_1_1__CO_out3
+ .rodata.ETS_COF_CO_out3
+                0x00008182        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008182                ETS_COF_CO_out3
+ .rodata.ETS_CO_DPT_12__CO_keypass
+                0x00008184        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008184                ETS_CO_DPT_12__CO_keypass
+ .rodata.ETS_COF_CO_keypass
+                0x00008186        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00008186                ETS_COF_CO_keypass
+ .rodata.DM_deviceConst
+                0x00008188       0x1c C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x00008188                DM_deviceConst
+ .rodata.EEvariables
+                0x000081a4       0x34 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081a4                EEvariables
+ .rodata.ADT_mcbTableControl
+                0x000081d8        0x8 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081d8                ADT_mcbTableControl
+ .rodata.AST_mcbTableControl
+                0x000081e0        0x8 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081e0                AST_mcbTableControl
+ .rodata.COT_mcbTableControl
+                0x000081e8        0x8 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081e8                COT_mcbTableControl
+ .rodata.byteEepromPtr
+                0x000081f0        0x4 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081f0                byteEepromPtr
+ .rodata.DM_objectTabSize_Copy
+                0x000081f4        0x2 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081f4                DM_objectTabSize_Copy
+ .rodata.TM_timerNr
+                0x000081f6        0x1 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x000081f6                TM_timerNr
+ *(.glue_7)
+ .glue_7        0x00000000        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00000000        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x000081f8                . = ALIGN (0x4)
+ *fill*         0x000081f7        0x1 00
+                0x000081f8                _etext = .
+
+.vfp11_veneer   0x000081f8        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000081f8        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.iplt           0x000081f8        0x0
+ .iplt          0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+
+.rel.dyn        0x000081f8        0x0
+ .rel.iplt      0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x000081f8        0x0
+                0x000081f8                __exidx_start = .
+ *(.ARM.exidx*)
+                0x000081f8                __exidx_end = .
+
+.preinit_array  0x000081f8        0x0
+                0x000081f8                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x000081f8                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x000081f8        0x0
+                0x000081f8                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+                0x000081f8                PROVIDE (__init_array_end, .)
+
+.fini_array     0x000081f8        0x0
+                0x000081f8                PROVIDE (__fini_array_start, .)
+ *(.fini_array*)
+ *(SORT(.fini_array.*))
+                0x000081f8                PROVIDE (__fini_array_end, .)
+                0x000081f8                _sidata = .
+                0x00000000                _BCU_SYS_data = LOADADDR (BCU_SYS_EEPROM)
+                0x00000000                _BCU_data = LOADADDR (BCU_EEPROM)
+
+.data           0x00000000        0x0 load address 0x000081f8
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                _sdata = .
+ KEEP*(.data)
+ KEEP*(.data*)
+                0x00000000                . = ALIGN (0x4)
+                0x00000000                _edata = .
+ .data          0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .data          0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .data          0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .data          0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+
+.igot.plt       0x00000000        0x0 load address 0x000081f8
+ .igot.plt      0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+
+BCU_SYS_EEPROM  0x00000000        0x0
+                0x00000000                PROVIDE (__start_BCU_SYS_EEPROM, .)
+ KEEP*(BCU_SYS_EEPROM)
+ KEEP*(BCU_SYS_EEPROM*)
+                0x00000000                PROVIDE (__stop_BCU_SYS_EEPROM, .)
+
+BCU_EEPROM      0x00000000        0x0
+                0x00000000                PROVIDE (__start_BCU_EEPROM, .)
+ KEEP*(BCU_EEPROM)
+ KEEP*(BCU_EEPROM*)
+                0x00000000                PROVIDE (__stop_BCU_EEPROM, .)
+                0x00000000                . = ALIGN (0x4)
+
+.bss            0x00000000       0x54 load address 0x000081f8
+                0x00000000                _sbss = .
+                0x00000000                __bss_start__ = _sbss
+ *(.bss)
+ .bss           0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .bss           0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .bss           0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .bss           0x00000000        0x0 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x00000000       0x20 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                0x00000000                ETS_loadControl0
+                0x00000010                ETS_loadControl
+ COMMON         0x00000020       0x34 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                0x00000020                TM_tmData
+                0x00000038                DM_ram
+                0x00000054                . = ALIGN (0x4)
+                0x00000054                _ebss = .
+                0x00000054                __bss_end__ = _ebss
+                0x00000054                PROVIDE (end, _ebss)
+                0x00000054                PROVIDE (_end, _ebss)
+
+._user_heap_stack
+                0x00000054       0x80 load address 0x0000824c
+                0x00000054                . = ALIGN (0x4)
+                0x00000054                . = (. + _Min_Heap_Size)
+                0x000000d4                . = (. + _Min_Stack_Size)
+ *fill*         0x00000054       0x80 00
+                0x000000d4                . = ALIGN (0x4)
+
+.memory_b1_text
+ *(.mb1text)
+ *(.mb1text*)
+ *(.mb1rodata)
+ *(.mb1rodata*)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x33
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x33 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .ARM.attributes
+                0x00000033       0x33 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .ARM.attributes
+                0x00000066       0x33 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .ARM.attributes
+                0x00000099       0x33 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+OUTPUT(C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_do.elf elf32-littlearm)
+
+.debug_info     0x00000000     0x1ee0
+ .debug_info    0x00000000      0xd4d C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .debug_info    0x00000d4d       0x3c C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .debug_info    0x00000d89      0xb2b C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .debug_info    0x000018b4      0x62c C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+
+.debug_abbrev   0x00000000      0x2a8
+ .debug_abbrev  0x00000000      0x109 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .debug_abbrev  0x00000109       0x2c C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .debug_abbrev  0x00000135       0x89 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .debug_abbrev  0x000001be       0xea C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+
+.debug_aranges  0x00000000       0x68
+ .debug_aranges
+                0x00000000       0x18 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .debug_aranges
+                0x00000018       0x20 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .debug_aranges
+                0x00000038       0x18 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .debug_aranges
+                0x00000050       0x18 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+
+.debug_line     0x00000000      0x725
+ .debug_line    0x00000000      0x23c C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+ .debug_line    0x0000023c       0x80 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .debug_line    0x000002bc      0x1f9 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .debug_line    0x000004b5      0x270 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+
+.debug_str      0x00000000     0x1b33
+ .debug_str     0x00000000     0x1576 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                               0x161c (size before relaxing)
+ .debug_str     0x00001576       0x55 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+                                 0x9e (size before relaxing)
+ .debug_str     0x000015cb      0x2f1 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+                               0x1428 (size before relaxing)
+ .debug_str     0x000018bc      0x277 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+                                0x551 (size before relaxing)
+
+.comment        0x00000000       0x70
+ .comment       0x00000000       0x70 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/app_data.obj
+                                 0x71 (size before relaxing)
+ .comment       0x00000000       0x71 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+ .comment       0x00000000       0x71 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/ets_07B0.obj
+ .comment       0x00000000       0x71 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/dat_07B0.obj
+
+.debug_loc      0x00000000       0x2c
+ .debug_loc     0x00000000       0x2c C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+
+.debug_ranges   0x00000000       0x10
+ .debug_ranges  0x00000000       0x10 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj
+
+.debug_frame    0x00000000       0x28
+ .debug_frame   0x00000000       0x28 C:/KAIstack_DEMO_STM32_GCC/keypad/Keypad4in4out/dummy/d_main.obj

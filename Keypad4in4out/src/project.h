@@ -1,0 +1,148 @@
+//{{TAPKO_EXPORT_MIC
+//------------------------------------------------------------------
+//
+// Copyright (c) 1999 - 2009 Tapko Technologies GmbH
+//
+// PROPRIETARY RIGHTS of Tapko Technologies GmbH are involved
+// in the subject matter of this material. All manufacturing,
+// reproduction, use, and sales rights pertaining to this subject matter
+// are governed by the license agreement. The recipient of this software
+// implicitly accepts the terms of the license.
+//
+// This file is part of the Libraries of Tapko Technologies GmbH
+// (e.g. TAPKO EIB/KNX Communication Stack)
+//
+//------------------------------------------------------------------
+// $HeadURL: https://tapko-app.tapko.local:1443/svn/KAIstack/trunk/appl_example/echo/src/project.h $
+//
+// Project:           EIB-Communication-Stack
+//
+// $Author: Adler_K $
+//
+// $Date: 2015-05-06 12:44:24 +0200 (Mi, 06 Mai 2015) $
+// $Revision: 1580 $
+//------------------------------------------------------------------
+//}}TAPKO_EXPORT_MIC
+#include "constant.h"
+
+/**
+Indicates that project settings are included
+*/
+#define PROJECT_SETTINGS
+
+// automatic detection of the win32 project
+#ifdef WIN32
+#define DEBUG_WIN32          // debug version for PC without EEPROM
+#endif
+ 
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+//{{TAPKO_EXPORT_MIC
+#define DEBUG   1
+#define KNX_DEMO 1
+//------------------------------------------------------------------
+/**
+This onstant defines the KNX device model
+possible definitions are (not complete):
+- #define EIB_DEVICE_MODEL   @ref EIB_DEVICE_MODEL_0705
+- #define EIB_DEVICE_MODEL   @ref EIB_DEVICE_MODEL_5705            
+*/
+//#define EIB_DEVICE_MODEL   EIB_DEVICE_MODEL_07B0
+#define EIB_DEVICE_MODEL   EIB_DEVICE_MODEL_07B0
+#define AST_FORMAT AST_FORMAT_LARGE
+
+#define KNX_SERIAL_NR_INIT             0x00,0x72,0xff,0xff,0xC0,0x11, 
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// enables the EIB-easy controller mode
+//#define EIB_EASY_CONTROLLER_MODE
+//#define EIB_EASY_PARAMETER_SIZE 1
+
+//------------------------------------------------------------------
+// this section defines the board specific settings
+// e.g. Microcontroller, KNX-IO ports, frequency, Compiler
+//------------------------------------------------------------------
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// KNX_TARGET  - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+/**
+defining the target platform
+this includes:
+- microcontroller family
+- compiler, including version
+- type of communication interface to KNX (KAIlink)
+possible targets are (not complete list):
+- communication interface: TPUART:
+  -  #define KNX_TARGET  MSP430_IAR5_TF
+- communication interface: KAIlink BIT, FZE 1066
+  -  #define KNX_TARGET  MSP430_IAR5_DF
+- communication interface: KAIlink RF, SX1211
+  -  #define KNX_TARGET  MSP430_IAR5_RF
+@see Targets
+*/
+#define KNX_TARGET  STM32_GCC_TF 
+
+
+//------------------------------------------------------------------
+// DERIVATE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+/**
+Defines the derivate of the microcontroller family.
+This variable is used to adapt the register access and the linking
+examples for possible definitions (not complete)
+- #define DERIVATE           MSP430F149
+- #define DERIVATE           MSP430F2370
+- #define DERIVATE           MSP430F249
+- #define DERIVATE           MSP430F449
+- #define DERIVATE           MSP430F5528
+@see Targets
+*/
+
+#define DERIVATE           STM32F103xB
+
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// defining type of the build
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#define MAKE_USE_LIB        1
+//#define MAKE_BUILD_LIB      1
+
+#define LIB_TYPE            COMPLETE_LIB  
+
+
+//------------------------------------------------------------------
+/**
+If the constant KAISTACK_EVAL_BOARD_H is defined, 
+the board definition files for the KAIstack eval boards are included.
+If this constant is not defined,
+the application specific board definition file (e.g. KAI_board.h) has to be included.
+*/
+#define KAISTACK_EVAL_BOARD_H   TAPKO_DEFAULT_BOARD
+
+//------------------------------------------------------------------
+// this section defines required for the make process
+// e.g. build type stack, additional defines
+//------------------------------------------------------------------
+
+// stack size
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#define STACK_SIZE         200
+
+//}}TAPKO_EXPORT_MIC
+//------------------------------------------------------------------
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+// this section defines the KAIstack specific settings
+//------------------------------------------------------------------
+
+//------------------------------------------------------------------
+/**
+Enables additional check routines. E.g. Consistence check of pointer, sorting of tables. 
+An error will lead to an error in the corresponding state machine. 
+*/
+#define MEMORY_CHECK
+
+

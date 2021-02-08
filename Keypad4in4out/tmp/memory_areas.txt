@@ -1,0 +1,16 @@
+/* Specify the memory areas for application wo bootloader */ 
+ MEMORY 
+ { 
+ ISR_MEM (rx)    : ORIGIN = 0x08000000, LENGTH = 0x200 
+ FLASH (rx)      : ORIGIN = 0x08000000 + 0x200, LENGTH = ((0x0801FFFF-0x08000000)+1) - 0x200 
+ RAM (xrw)       : ORIGIN = 0x20000000, LENGTH = 0x5000 
+ MEMORY_B1 (rx)  : ORIGIN = 0x60000000, LENGTH = 0K 
+ 
+ SEC_PC_TOOL_INFO_MEM (rx): ORIGIN = 0, LENGTH = 0 
+ SEC_BLC_APPL_INFO_MEM (rx): ORIGIN = 0, LENGTH = 0 
+ } 
+ 
+ /* Generate a link error if heap and stack don't fit into RAM */ 
+ _Min_Heap_Size = 0;   /* required amount of heap  */ 
+ _Min_Stack_Size = 0x200; /* required amount of stack */ 
+  

@@ -1,0 +1,37 @@
+#------------------------------------------------------------------
+# $Workfile: empty.gmak $   
+# $Archive: /eib_stk/appl_example/empty/workspace/gmake/empty.gmak $     
+#
+# Makefile
+#
+# $Author: Adler_k $         
+# 
+# Copyright Tapko Technologies GmbH
+# 
+# $Date: 8.10.09 12:51 $
+# $Revision: 8 $         
+#------------------------------------------------------------------
+
+#------------------------------------------------------------------
+# path settings
+#------------------------------------------------------------------
+MAKEFILE          = $(word 1, $(MAKEFILE_LIST))
+PATH_PRJ          = $(CURDIR)
+PATH_MAKE         = $(PATH_PRJ)/workspace/gmake
+PATH_EIB_STK      = $(PATH_PRJ)/../../system_15
+PATH_APPL         = $(PATH_PRJ)/src
+PATH_FB           = $(PATH_PRJ)/../../FunctionalBlocks
+PATH_SYS_MAKE     = $(PATH_EIB_STK)/make/gmake
+
+#------------------------------------------------------------------
+# project settings
+#------------------------------------------------------------------
+include $(PATH_SYS_MAKE)/tools.gmic
+
+#------------------------------------------------------------------
+
+all clean rebuild docu:
+	@echo +++++++++++++++++++++++++++++++++++ calling make
+	@$(MAKE) -f $(PATH_SYS_MAKE)/project_mic.gmak $(MAKECMDGOALS) -r -R --directory=$(PATH_PRJ)
+	@$(MAKE) -f $(PATH_SYS_MAKE)/main.gmak $(MAKECMDGOALS) -r -R --directory=$(PATH_PRJ)
+	

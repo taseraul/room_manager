@@ -1,0 +1,25 @@
+#------------------------------------------------------------------
+# $Workfile: app_make.gmic $   
+# $Archive: /eib_stk/appl_tapko/empty/workspace/gmake/app_make.gmic $     
+#
+# Makefile
+#
+# $Author: Adler_k $         
+# 
+# Copyright Tapko Technologies GmbH
+# 
+# $Date: 18.08.05 10:06 $
+# $Revision: 2 $         
+#------------------------------------------------------------------
+
+SOURCES_APPL_BASIC = $(PATH_APPL)/Keypad4in4out.c \
+                     $(PATH_APPL)/app_data.c \
+
+
+SOURCES_APPL_FIX =  $(SOURCES_APPL_BASIC) \
+                    $(PATH_APPL)/main.c \
+
+SOURCES_APPL_ETS  = $(PATH_APPL)/app_data.c \
+
+DEPENDENCIES_APPL = $(wildcard $(PATH_APPL)/*.h) 
+
